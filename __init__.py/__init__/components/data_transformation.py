@@ -3,7 +3,7 @@ from dataclasses import dataclass
 
 import numpy as np
 import pandas as pd
-from sklearn.compose import columntransformer
+from sklearn.compose import ColumnTransformer, columntransformer
 from sklearn.impute import SimpleImputer
 from sklearn.pipeline import Pipeline
 from sklearn.preprocessing import OneHotEncoder,StandardScaler
@@ -86,7 +86,7 @@ class DataTransformation:
             test_arr=np.c_[input_feature_test_arr,np.array(target_feature_test_df)]
 
             logging.info("Saved preprocessing object.")
-            save object(
+            save_object(
                 file_path=self.data_transformation_config.preprocessor_obj_file_path,
                 obj=preprocessing_obj
             )
